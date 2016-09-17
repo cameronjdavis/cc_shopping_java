@@ -3,7 +3,7 @@ package cc_shopping_java.discounts;
 import java.util.Collection;
 
 /**
- * An collection of discounts that are applied to a total price. This class
+ * A collection of discounts that are applied to a total price. This class
  * implements Discount so it can be used wherever a single Discount is used.
  * Interfaces for the win!
  */
