@@ -27,7 +27,81 @@ import cc_shopping_java.discounts.TwoForOneDiscount;
  * This is not a unit test, rather it demonstrates the classes as they could be
  * used in production.
  */
-public class RealWorld1 {
+public class RealWorld {
+
+	/**
+	 * Process a basket with lots of items and doing discounting step by step.
+	 */
+	@Test
+	public void test_filledBasket() {
+		// simulated input for loyalty card
+		boolean isLoyal = true;
+
+		// create a new basket
+		Collection<ShoppingItem> basket = new ArrayList<ShoppingItem>();
+
+		// create some items for purchasing
+		ShoppingItem item1 = new ShoppingItem("PLU 1", "Name 1", 1.09);
+		ShoppingItem item2 = new ShoppingItem("PLU 2", "Name 2", 2.77);
+		ShoppingItem item3 = new ShoppingItem("PLU 3", "Name 3", 3.12);
+
+		// add item 1
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+		basket.add(item1);
+
+		// add item 2
+		basket.add(item2);
+		basket.add(item2);
+		basket.add(item2);
+		basket.add(item2);
+		basket.add(item2);
+
+		basket.add(item2);
+		basket.add(item2);
+		basket.add(item2);
+
+		// add item 3, which is two-for-one
+		basket.add(item3);
+		basket.add(item3);
+
+		// calculate the total before discounting
+		PriceCalculator calculator = new UndiscountedPriceCalculator();
+		double total = calculator.calculatePrice(basket);
+		assertEquals(39.30, total, 0);
+
+		// apply a two-for-one discount which is first in line
+		Set<ShoppingItem> discountedItems = new HashSet<ShoppingItem>();
+		discountedItems.add(item3);
+		Discount twoForOneDiscount = new TwoForOneDiscount(discountedItems, basket);
+		double total1 = twoForOneDiscount.applyDiscount(total);
+		assertEquals(total - 3.12, total1, 0);
+
+		// apply a total threshold discount for 10% after £20 total
+		Discount percentageDiscount1 = new PercentageDiscount(0.1);
+		Discount thresholdDiscount = new TotalThresholdDiscount(20.0, percentageDiscount1);
+		double total2 = thresholdDiscount.applyDiscount(total1);
+		assertEquals(total1 * (1 - 0.1), total2, 0);
+
+		// apply a loyalty card discount of 2%
+		Discount percentageDiscount2 = new PercentageDiscount(0.02);
+		Discount loyaltyDiscount = new LoyaltyDiscount(isLoyal, percentageDiscount2);
+		double total3 = loyaltyDiscount.applyDiscount(total2);
+		assertEquals(total2 * (1 - 0.02), total3, 0);
+
+		// round (read truncate) the final discounted price
+		Rounding rounding = new TruncationRounding();
+		double roundedTotal = rounding.roundPrice(total3);
+		assertEquals(31.91, roundedTotal, 0);
+	}
 
 	/**
 	 * An empty basket and using DiscountCollection and
