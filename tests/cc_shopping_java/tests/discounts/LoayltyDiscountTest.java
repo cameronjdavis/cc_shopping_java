@@ -36,9 +36,9 @@ public class LoayltyDiscountTest {
         this.subject = new LoyaltyDiscount(false, this.discount);
         double total = 987.6;
 
-        double actual = this.subject.applyDiscount(total);
-        
         verify(this.discount, never()).applyDiscount(anyDouble());
+        
+        double actual = this.subject.applyDiscount(total);
 
         assertEquals(total, actual, 0.0);
     }
