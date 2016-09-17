@@ -23,7 +23,7 @@ public class LoyaltyDiscount {
 	 * If customer is loyal then apply a discount. If customer is not loyal then
 	 * do not apply discount.
 	 */
-	public float applyDiscount(float total) {
+	public double applyDiscount(double total) {
 		// if customer is loyal then apply the discount
 		if (this.isLoyal) {
 			return this.discount.applyDiscount(total);

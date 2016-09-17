@@ -7,5 +7,5 @@ public interface Discount {
 	/**
 	 * Apply a discount to a total price.
 	 */
-	public float applyDiscount(float total);
+	public double applyDiscount(double total);
 }
