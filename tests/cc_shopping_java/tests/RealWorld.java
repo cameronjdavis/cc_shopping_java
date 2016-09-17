@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import cc_shopping_java.DiscountedPriceCalculator;
