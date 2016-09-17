@@ -26,7 +26,7 @@ import cc_shopping_java.discounts.TwoForOneDiscount;
  * This is not a unit test, rather it demonstrates the classes as they could be
  * used in production.
  */
-public class RealWorld {
+public class RealWorldTest {
 
 	/**
 	 * Process a basket with lots of items and doing discounting step by step.
