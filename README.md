@@ -8,8 +8,8 @@ This is Cameron's implementation of the CC coding challenge completed in Java.
 
 ## Tests
 
+To compile and run tests with ant run `ant test`
+
 The test results can be seen at https://travis-ci.org/cameronjdavis/cc_shopping_java
 
-Unit tests are in the `tests` directory.
-
-The test file `tests/cc_shopping_java/tests/RealWorldTest.java` contains two examples of how the code could be run in production.
+The test file `tests/cc_shopping_java/tests/RealWorldTest.java` contains two examples of how the code could be used in production.
