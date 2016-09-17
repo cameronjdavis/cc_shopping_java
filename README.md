@@ -12,4 +12,4 @@ Compile and run tests with `ant test`
 
 The test results can also be seen at https://travis-ci.org/cameronjdavis/cc_shopping_java
 
-The test file `tests/cc_shopping_java/tests/RealWorldTest.java` contains two examples of how the code could be used in production.
+The test file [tests/cc_shopping_java/tests/RealWorldTest.java](tests/cc_shopping_java/tests/RealWorldTest.java) contains two examples of how the code could be used in production.
