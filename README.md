@@ -10,6 +10,6 @@ This is Cameron's implementation of the CC coding challenge completed in Java.
 
 The test results can be seen at https://travis-ci.org/cameronjdavis/cc_shopping_java
 
-Unit tests are in the `tests` directory and can be run.
+Unit tests are in the `tests` directory.
 
-The test file `tests/RealWorldTest.java` is an example of how the code could be run in production.
+The test file `tests/cc_shopping_java/tests/RealWorldTest.java` contains two examples of how the code could be run in production.
