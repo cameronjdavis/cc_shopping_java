@@ -10,7 +10,7 @@ import cc_shopping_java.ShoppingItem;
  * This discount searches a basket for items that are offered two-for-one. If it
  * finds those items, it will calculate and apply the discounted value.
  */
-public class TwoForOneDiscount {
+public class TwoForOneDiscount implements Discount {
 
 	/**
 	 * Set of shopping items that have two-for-one discounts.

@@ -3,7 +3,7 @@ package cc_shopping_java.discounts;
 /**
  * A discount that is only applied if the customer is a loyalty card holder.
  */
-public class LoyaltyDiscount {
+public class LoyaltyDiscount implements Discount {
 	/**
 	 * True if the customer has a loyalty card, otherwise false.
 	 */

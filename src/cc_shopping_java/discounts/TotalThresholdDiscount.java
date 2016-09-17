@@ -3,7 +3,7 @@ package cc_shopping_java.discounts;
 /**
  * A discount that is applied if the total meets a threshold amount.
  */
-public class TotalThresholdDiscount {
+public class TotalThresholdDiscount implements Discount {
 	/**
 	 * Minimum threshold for total to be greater-than or equal to.
 	 */
