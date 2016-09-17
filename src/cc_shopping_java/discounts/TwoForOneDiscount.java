@@ -1,6 +1,7 @@
 package cc_shopping_java.discounts;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 import cc_shopping_java.ShoppingItem;
@@ -42,14 +43,8 @@ public class TwoForOneDiscount {
 	public double applyDiscount(double total) {
 		// for each PLU that has a two-for-one offer
 		for (ShoppingItem discountedItem : this.discountedItems) {
-			int numItems = 0;
-
 			// count the items in the basket with this PLU
-			for (ShoppingItem item : this.basket) {
-				if (item.getPlu() == discountedItem.getPlu()) {
-					numItems++;
-				}
-			}
+			int numItems = Collections.frequency(this.basket, discountedItem);
 
 			// if enough items for a discount were found
 			if (numItems > 1) {
