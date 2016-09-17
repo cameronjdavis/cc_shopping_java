@@ -30,7 +30,8 @@ import cc_shopping_java.discounts.TwoForOneDiscount;
 public class RealWorld1 {
 
 	/**
-	 * An empty basket and using DiscountCollection and DiscountedPriceCalculator.
+	 * An empty basket and using DiscountCollection and
+	 * DiscountedPriceCalculator.
 	 */
 	@Test
 	public void test_usingDiscountList() {
@@ -43,8 +44,7 @@ public class RealWorld1 {
 		// create an item for discounting
 		ShoppingItem item3 = new ShoppingItem("PLU 3", "Name 3", 3.12);
 
-		// create a list of discounts and use them to make a single, complex
-		// discount
+		// create a list of discounts and use them to make a discount collection
 		Set<Discount> discounts = new HashSet<Discount>();
 		Discount discount = new DiscountCollection(discounts);
 
@@ -64,7 +64,7 @@ public class RealWorld1 {
 		// calculate the total with discounting
 		UndiscountedPriceCalculator undiscountedCalculator = new UndiscountedPriceCalculator();
 		PriceCalculator discountedCalculator = new DiscountedPriceCalculator(undiscountedCalculator, discount);
-		
+
 		// calculate the total and apply discounts
 		double discountedTotal = discountedCalculator.calculatePrice(basket);
 
