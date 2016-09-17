@@ -10,37 +10,35 @@ public class LoayltyDiscountTest {
 
 	private LoyaltyDiscount subject;
 
-    private Discount discount;
-	
+	private Discount discount;
+
 	@Before
 	public void setUp() throws Exception {
 		this.discount = mock(Discount.class);
 	}
 
 	@Test
-    public void test_applyDiscount_isLoyal()
-    {
-        this.subject = new LoyaltyDiscount(true, this.discount);
-        double total = 987.6;
+	public void test_applyDiscount_isLoyal() {
+		this.subject = new LoyaltyDiscount(true, this.discount);
+		double total = 987.6;
 
-        when(this.discount.applyDiscount(total)).thenReturn(123.4);
+		when(this.discount.applyDiscount(total)).thenReturn(123.4);
 
-        double actual = this.subject.applyDiscount(total);
+		double actual = this.subject.applyDiscount(total);
 
-        assertEquals(123.4, actual, 0.01);
-    }
+		assertEquals(123.4, actual, 0.01);
+	}
 
 	@Test
-    public void test_applyDiscount_isNotLoyal()
-    {
-        this.subject = new LoyaltyDiscount(false, this.discount);
-        double total = 987.6;
+	public void test_applyDiscount_isNotLoyal() {
+		this.subject = new LoyaltyDiscount(false, this.discount);
+		double total = 987.6;
 
-        verify(this.discount, never()).applyDiscount(anyDouble());
-        
-        double actual = this.subject.applyDiscount(total);
+		verify(this.discount, never()).applyDiscount(anyDouble());
 
-        assertEquals(total, actual, 0.0);
-    }
+		double actual = this.subject.applyDiscount(total);
+
+		assertEquals(total, actual, 0.0);
+	}
 
 }

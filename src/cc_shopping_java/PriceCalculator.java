@@ -8,7 +8,9 @@ import java.util.Collection;
 public interface PriceCalculator {
 	/**
 	 * Calculate the price for a collection of items.
-	 * @param basket Items to calculate a price for.
+	 * 
+	 * @param basket
+	 *            Items to calculate a price for.
 	 * @return Price for collection of items.
 	 */
 	public double calculatePrice(Collection<ShoppingItem> basket);

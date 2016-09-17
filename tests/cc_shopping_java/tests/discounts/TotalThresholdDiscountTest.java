@@ -10,49 +10,46 @@ public class TotalThresholdDiscountTest {
 
 	private TotalThresholdDiscount subject;
 
-    private Discount discount;
-	
+	private Discount discount;
+
 	@Before
 	public void setUp() throws Exception {
 		this.discount = mock(Discount.class);
 	}
 
 	@Test
-	public void test_applyDiscount_totalAboveThreshold()
-    {
-        double total = 987.6;
-        this.subject = new TotalThresholdDiscount(10.0, this.discount);
-        
-        when(this.discount.applyDiscount(total)).thenReturn(123.4);
+	public void test_applyDiscount_totalAboveThreshold() {
+		double total = 987.6;
+		this.subject = new TotalThresholdDiscount(10.0, this.discount);
 
-        double actual = this.subject.applyDiscount(total);
+		when(this.discount.applyDiscount(total)).thenReturn(123.4);
 
-        assertEquals(123.4, actual, 0);
-    }
-	
+		double actual = this.subject.applyDiscount(total);
+
+		assertEquals(123.4, actual, 0);
+	}
+
 	@Test
-	public void test_applyDiscount_totalEqualsThreshold()
-    {
-        double total = 987.6;
-        this.subject = new TotalThresholdDiscount(total, this.discount);
-        
-        when(this.discount.applyDiscount(total)).thenReturn(123.4);
+	public void test_applyDiscount_totalEqualsThreshold() {
+		double total = 987.6;
+		this.subject = new TotalThresholdDiscount(total, this.discount);
 
-        double actual = this.subject.applyDiscount(total);
+		when(this.discount.applyDiscount(total)).thenReturn(123.4);
 
-        assertEquals(123.4, actual, 0);
-    }
-	
+		double actual = this.subject.applyDiscount(total);
+
+		assertEquals(123.4, actual, 0);
+	}
+
 	@Test
-	public void test_applyDiscount_totalBelowThreshold()
-    {
-        double total = 987.6;
-        this.subject = new TotalThresholdDiscount(1000, this.discount);
+	public void test_applyDiscount_totalBelowThreshold() {
+		double total = 987.6;
+		this.subject = new TotalThresholdDiscount(1000, this.discount);
 
-        verify(this.discount, never()).applyDiscount(anyDouble());
-        
-        double actual = this.subject.applyDiscount(total);
+		verify(this.discount, never()).applyDiscount(anyDouble());
 
-        assertEquals(total, actual, 0);
-    }
+		double actual = this.subject.applyDiscount(total);
+
+		assertEquals(total, actual, 0);
+	}
 }
