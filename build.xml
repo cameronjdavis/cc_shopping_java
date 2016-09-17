@@ -9,6 +9,7 @@
 
   <path id="classpath.test">
     <pathelement location="lib/junit-4.10.jar" />
+  	<pathelement location="mockito-all-1.10.19.jar" />
     <pathelement location="${main.build.dir}"/>
     <path refid="classpath.base" />
   </path>
