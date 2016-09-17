@@ -84,7 +84,7 @@ public class RealWorld {
 		double total1 = twoForOneDiscount.applyDiscount(total);
 		assertEquals(total - 3.12, total1, 0);
 
-		// apply a total threshold discount for 10% after £20 total
+		// apply a total threshold discount for 10% after Â£20 total
 		Discount percentageDiscount1 = new PercentageDiscount(0.1);
 		Discount thresholdDiscount = new TotalThresholdDiscount(20.0, percentageDiscount1);
 		double total2 = thresholdDiscount.applyDiscount(total1);
@@ -126,7 +126,7 @@ public class RealWorld {
 		twoForOneItems.add(item3);
 		discounts.add(new TwoForOneDiscount(twoForOneItems, basket));
 
-		// add a total threshold discount for 10% after £20 total
+		// add a total threshold discount for 10% after Â£20 total
 		PercentageDiscount percentageDiscount1 = new PercentageDiscount(0.1);
 		discounts.add(new TotalThresholdDiscount(20.0, percentageDiscount1));
 
