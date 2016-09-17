@@ -41,18 +41,18 @@ public class TwoForOneDiscount {
 	 *            Total before discounting.
 	 */
 	public double applyDiscount(double total) {
+		int numItems = 0;
+		double discount = 0;
+		
 		// for each PLU that has a two-for-one offer
 		for (ShoppingItem discountedItem : this.discountedItems) {
 			// count the items in the basket with this PLU
-			int numItems = Collections.frequency(this.basket, discountedItem);
+			numItems = Collections.frequency(this.basket, discountedItem);
 
-			// if enough items for a discount were found
-			if (numItems > 1) {
-				// calculate the discount for the items that have this PLU
-				double discount = this.calculateDiscount(numItems, discountedItem.getPrice());
-				// subtract the discount for this PLU
-				total = total - discount;
-			}
+			// calculate the discount for the items that have this PLU
+			discount = this.calculateDiscount(numItems, discountedItem.getPrice());
+			// subtract the discount for this PLU
+			total = total - discount;
 		}
 
 		return total;
