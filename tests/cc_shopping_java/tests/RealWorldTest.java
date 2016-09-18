@@ -77,7 +77,7 @@ public class RealWorldTest {
 		double total = calculator.calculatePrice(basket);
 		assertEquals(39.30, total, 0);
 
-		// apply a two-for-one discount which is first in line
+		// apply a two-for-one discount first
 		Set<ShoppingItem> discountedItems = new HashSet<ShoppingItem>();
 		discountedItems.add(item3);
 		Discount twoForOneDiscount = new TwoForOneDiscount(discountedItems, basket);
@@ -121,7 +121,7 @@ public class RealWorldTest {
 		Set<Discount> discounts = new HashSet<Discount>();
 		Discount discount = new DiscountCollection(discounts);
 
-		// add a two-for-one discount which is first in line
+		// add a two-for-one discount first
 		Set<ShoppingItem> twoForOneItems = new HashSet<ShoppingItem>();
 		twoForOneItems.add(item3);
 		discounts.add(new TwoForOneDiscount(twoForOneItems, basket));
