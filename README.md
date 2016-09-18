@@ -6,6 +6,10 @@
 
 This is Cameron's implementation of the CC coding challenge completed in Java.
 
+## Install
+
+Clone with `git clone https://github.com/cameronjdavis/cc_shopping_java.git`
+
 ## Tests
 
 Compile and run tests with `ant test`
