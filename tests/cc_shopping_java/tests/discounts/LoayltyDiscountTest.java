@@ -26,7 +26,7 @@ public class LoayltyDiscountTest {
 
 		double actual = this.subject.applyDiscount(total);
 
-		assertEquals(123.4, actual, 0.01);
+		assertEquals(123.4, actual, 0);
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class LoayltyDiscountTest {
 
 		double actual = this.subject.applyDiscount(total);
 
-		assertEquals(total, actual, 0.0);
+		assertEquals(total, actual, 0);
 	}
 
 }
