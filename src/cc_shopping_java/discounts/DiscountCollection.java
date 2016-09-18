@@ -11,6 +11,9 @@ public class DiscountCollection implements Discount {
 
 	private Collection<Discount> discounts;
 
+	/**
+	 * @param discounts Collection of discounts to be applied in this DiscountCollection.
+	 */
 	public DiscountCollection(Collection<Discount> discounts) {
 		this.discounts = discounts;
 	}

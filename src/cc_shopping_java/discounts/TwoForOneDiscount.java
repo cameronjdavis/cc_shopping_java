@@ -44,12 +44,12 @@ public class TwoForOneDiscount implements Discount {
 		int numItems = 0;
 		double discount = 0;
 		
-		// for each PLU that has a two-for-one offer
+		// for each item that is offered two-for-one
 		for (ShoppingItem discountedItem : this.discountedItems) {
-			// count the items in the basket with this PLU
+			// count the items in the basket that match the two-for-one item
 			numItems = Collections.frequency(this.basket, discountedItem);
 
-			// calculate the discount for the items that have this PLU
+			// calculate the discount for the items that do match
 			discount = this.calculateDiscount(numItems, discountedItem.getPrice());
 			// subtract the discount for this PLU
 			total = total - discount;

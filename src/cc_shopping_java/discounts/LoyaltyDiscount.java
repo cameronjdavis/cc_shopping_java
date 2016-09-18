@@ -14,6 +14,10 @@ public class LoyaltyDiscount implements Discount {
 	 */
 	private Discount discount;
 
+	/**
+	 * @param isLoyal True if the customer is loyal, otherwise false.
+	 * @param discount Discount to apply if customer is loyal.
+	 */
 	public LoyaltyDiscount(boolean isLoyal, Discount discount) {
 		this.isLoyal = isLoyal;
 		this.discount = discount;

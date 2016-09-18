@@ -16,9 +16,9 @@ public class TotalThresholdDiscount implements Discount {
 
 	/**
 	 * @param threshold
-	 *            Threshold to be met for discount.
+	 *            Threshold to be met for discount. E.g. $20.00.
 	 * @param discount
-	 *            To be applied if threshold is met.
+	 *            Discount to be applied if threshold is met.
 	 */
 	public TotalThresholdDiscount(double threshold, Discount discount) {
 		this.threshold = threshold;
