@@ -2,13 +2,12 @@ package cc_shopping_java.tests;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
 
+import cc_shopping_java.Basket;
 import cc_shopping_java.DiscountedPriceCalculator;
 import cc_shopping_java.PriceCalculator;
 import cc_shopping_java.Rounding;
@@ -37,7 +36,7 @@ public class RealWorldTest {
 		boolean isLoyal = true;
 
 		// create a new basket
-		Collection<ShoppingItem> basket = new ArrayList<ShoppingItem>();
+		Basket basket = new Basket();
 
 		// create some items for purchasing
 		ShoppingItem item1 = new ShoppingItem("PLU 1", "Name 1", 1.09);
@@ -112,7 +111,7 @@ public class RealWorldTest {
 		boolean isLoyal = true;
 
 		// create a new basket
-		Collection<ShoppingItem> basket = new ArrayList<ShoppingItem>();
+		Basket basket = new Basket();
 
 		// create an item for discounting
 		ShoppingItem item3 = new ShoppingItem("PLU 3", "Name 3", 3.12);

@@ -1,7 +1,5 @@
 package cc_shopping_java;
 
-import java.util.Collection;
-
 import cc_shopping_java.discounts.Discount;
 
 /**
@@ -28,7 +26,7 @@ public class DiscountedPriceCalculator implements PriceCalculator {
 	 * Calculate the total price with discounting.
 	 */
 	@Override
-	public double calculatePrice(Collection<ShoppingItem> basket) {
+	public double calculatePrice(Basket basket) {
 		double total = this.totalCalculator.calculatePrice(basket);
 
 		return this.discount.applyDiscount(total);

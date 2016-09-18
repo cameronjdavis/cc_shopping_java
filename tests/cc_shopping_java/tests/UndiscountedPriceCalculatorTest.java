@@ -2,9 +2,7 @@ package cc_shopping_java.tests;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
+import cc_shopping_java.Basket;
 import cc_shopping_java.ShoppingItem;
 import cc_shopping_java.UndiscountedPriceCalculator;
 
@@ -15,12 +13,12 @@ public class UndiscountedPriceCalculatorTest {
 
 	private UndiscountedPriceCalculator subject;
 
-	private Collection<ShoppingItem> basket;
+	private Basket basket;
 
 	@Before
 	public void setUp() throws Exception {
 		this.subject = new UndiscountedPriceCalculator();
-		this.basket = new ArrayList<ShoppingItem>();
+		this.basket = new Basket();
 	}
 
 	@Test

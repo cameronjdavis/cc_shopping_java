@@ -3,12 +3,9 @@ package cc_shopping_java.tests;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-import cc_shopping_java.ShoppingItem;
 import cc_shopping_java.UndiscountedPriceCalculator;
 import cc_shopping_java.discounts.Discount;
+import cc_shopping_java.Basket;
 import cc_shopping_java.DiscountedPriceCalculator;
 
 import org.junit.Before;
@@ -22,14 +19,14 @@ public class DiscountedPriceCalculatorTest {
 
 	private Discount discount;
 
-	private Collection<ShoppingItem> basket;
+	private Basket basket;
 
 	@Before
 	public void setUp() throws Exception {
 		this.totalCalculator = mock(UndiscountedPriceCalculator.class);
 		this.discount = mock(Discount.class);
 		this.subject = new DiscountedPriceCalculator(this.totalCalculator, this.discount);
-		this.basket = new ArrayList<ShoppingItem>();
+		this.basket = new Basket();
 	}
 
 	@Test
