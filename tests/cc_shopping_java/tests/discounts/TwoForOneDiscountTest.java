@@ -2,14 +2,13 @@ package cc_shopping_java.tests.discounts;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import cc_shopping_java.Basket;
 import cc_shopping_java.ShoppingItem;
 import cc_shopping_java.discounts.TwoForOneDiscount;
 
@@ -19,12 +18,12 @@ public class TwoForOneDiscountTest {
 
 	private Set<ShoppingItem> discountedItems;
 
-	private Collection<ShoppingItem> basket;
+	private Basket basket;
 
 	@Before
 	public void setUp() throws Exception {
 		this.discountedItems = new HashSet<ShoppingItem>();
-		this.basket = new ArrayList<ShoppingItem>();
+		this.basket = new Basket();
 
 		this.subject = new TwoForOneDiscount(this.discountedItems, this.basket);
 	}

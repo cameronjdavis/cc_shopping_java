@@ -1,9 +1,9 @@
 package cc_shopping_java.discounts;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
+import cc_shopping_java.Basket;
 import cc_shopping_java.ShoppingItem;
 
 /**
@@ -18,17 +18,17 @@ public class TwoForOneDiscount implements Discount {
 	private Set<ShoppingItem> discountedItems;
 
 	/**
-	 * Shopping item collection the discount will be applied to.
+	 * The basket the discount will be applied to.
 	 */
-	private Collection<ShoppingItem> basket;
+	private Basket basket;
 
 	/**
 	 * @param discountedItems
 	 *            Set of shopping items that have two-for-one discounts.
 	 * @param basket
-	 *            Shopping item collection the discount will be applied to.
+	 *            The basket the discount will be applied to.
 	 */
-	public TwoForOneDiscount(Set<ShoppingItem> discountedItems, Collection<ShoppingItem> basket) {
+	public TwoForOneDiscount(Set<ShoppingItem> discountedItems, Basket basket) {
 		this.discountedItems = discountedItems;
 		this.basket = basket;
 	}
