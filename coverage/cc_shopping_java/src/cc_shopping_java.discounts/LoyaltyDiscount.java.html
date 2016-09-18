@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LoyaltyDiscount.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">cc_shopping_java (18-Sep-2016 16:05:17)</a> &gt; <a href="../../index.html" class="el_group">cc_shopping_java</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">cc_shopping_java.discounts</a> &gt; <span class="el_source">LoyaltyDiscount.java</span></div><h1>LoyaltyDiscount.java</h1><pre class="source lang-java linenums">package cc_shopping_java.discounts;
+
+/**
+ * A discount that is only applied if the customer is a loyalty card holder.
+ */
+public class LoyaltyDiscount implements Discount {
+	/**
+	 * True if the customer has a loyalty card, otherwise false.
+	 */
+	private boolean isLoyal;
+
+	/**
+	 * Discount to apply if customer is loyal.
+	 */
+	private Discount discount;
+
+	/**
+	 * @param isLoyal True if the customer is loyal, otherwise false.
+	 * @param discount Discount to apply if customer is loyal.
+	 */
+<span class="fc" id="L21">	public LoyaltyDiscount(boolean isLoyal, Discount discount) {</span>
+<span class="fc" id="L22">		this.isLoyal = isLoyal;</span>
+<span class="fc" id="L23">		this.discount = discount;</span>
+<span class="fc" id="L24">	}</span>
+
+	/**
+	 * If customer is loyal then apply a discount. If customer is not loyal then
+	 * do not apply discount.
+	 */
+	public double applyDiscount(double total) {
+		// if customer is loyal then apply the discount
+<span class="fc bfc" id="L32" title="All 2 branches covered.">		if (this.isLoyal) {</span>
+<span class="fc" id="L33">			return this.discount.applyDiscount(total);</span>
+		}
+
+		// customer is not loyal so do not apply discount
+<span class="fc" id="L37">		return total;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>cc_shopping_java (18-Sep-2016 16:05:17)</div></body></html>

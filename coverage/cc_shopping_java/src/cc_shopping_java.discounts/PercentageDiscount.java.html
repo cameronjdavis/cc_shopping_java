@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>PercentageDiscount.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">cc_shopping_java (18-Sep-2016 16:05:17)</a> &gt; <a href="../../index.html" class="el_group">cc_shopping_java</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">cc_shopping_java.discounts</a> &gt; <span class="el_source">PercentageDiscount.java</span></div><h1>PercentageDiscount.java</h1><pre class="source lang-java linenums">package cc_shopping_java.discounts;
+
+/**
+ * A percentage discount. E.g. Discount total by 15%.
+ */
+public class PercentageDiscount implements Discount {
+
+	/**
+	 * Percentage amount, e.g. 0.15 = 15%.
+	 */
+	private double percentage;
+
+	/**
+	 * @param percentage
+	 *            E.g. 0.15 = 15% discount.
+	 */
+<span class="fc" id="L17">	public PercentageDiscount(double percentage) {</span>
+<span class="fc" id="L18">		this.percentage = percentage;</span>
+<span class="fc" id="L19">	}</span>
+
+	/**
+	 * Apply a percentage discount to a total.
+	 */
+	@Override
+	public double applyDiscount(double total) {
+<span class="fc" id="L26">		double discountedTotal = total * (1.0 - this.percentage);</span>
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">		return discountedTotal &gt;= 0 ? discountedTotal : 0;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>cc_shopping_java (18-Sep-2016 16:05:17)</div></body></html>
