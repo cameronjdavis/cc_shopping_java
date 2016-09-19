@@ -133,7 +133,7 @@ public class RealWorldTest {
 		PercentageDiscount percentageDiscount2 = new PercentageDiscount(0.02);
 		discounts.add(new LoyaltyDiscount(isLoyal, percentageDiscount2));
 
-		// calculate the total with discounting
+		// create a calculator that takes into account discounting
 		UndiscountedPriceCalculator undiscountedCalculator = new UndiscountedPriceCalculator();
 		PriceCalculator discountedCalculator = new DiscountedPriceCalculator(undiscountedCalculator, discount);
 
