@@ -11,7 +11,7 @@ public class ShoppingItemTest {
 	private ShoppingItem subject;
 
 	@Test
-	public void test_setClassVariables() {
+	public void test_setInstanceVariables() {
 		this.subject = new ShoppingItem("PLU 1", "Name 1", 1.23);
 
 		assertEquals("PLU 1", this.subject.getPlu());
