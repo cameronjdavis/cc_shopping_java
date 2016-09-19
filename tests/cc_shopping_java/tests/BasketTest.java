@@ -9,9 +9,9 @@ import cc_shopping_java.Basket;
 import cc_shopping_java.ShoppingItem;
 
 /**
- * These tests are strictly required because they are testing ArrayList methods.
- * They are included to show the code meets the requirements to be able to add,
- * remove and empty the basket.
+ * These tests are not strictly required because they are testing ArrayList
+ * methods. They are included to show the code meets the requirements to be able
+ * to add, remove and empty the basket.
  */
 public class BasketTest {
 
